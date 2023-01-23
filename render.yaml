@@ -1,0 +1,10 @@
+services:
+- type: web
+  name: python
+  env: python
+  plan: starter
+  buildCommand: "./bin/render-build.sh"
+  startCommand: "bundle exec puma -C config/puma.rb"
+  envVars:
+  - key: DATABASE_URL
+    value: production
